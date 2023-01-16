@@ -1,15 +1,15 @@
 {
-    "name": "openapi-typescript-codegen",
-    "version": "0.23.0",
+    "name": "s2s-openapi-typescript-codegen",
+    "version": "1.0.0",
     "description": "Library that generates Typescript clients based on the OpenAPI specification.",
     "author": "Ferdi Koomen",
-    "homepage": "https://github.com/ferdikoomen/openapi-typescript-codegen",
+    "homepage": "https://github.com/przemyslaw-piatek/s2s-openapi-typescript-codegen",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/ferdikoomen/openapi-typescript-codegen.git"
+        "url": "git+https://github.com/przemyslaw-piatek/s2s-openapi-typescript-codegen.git"
     },
     "bugs": {
-        "url": "https://github.com/ferdikoomen/openapi-typescript-codegen/issues"
+        "url": "https://github.com/przemyslaw-piatek/s2s-openapi-typescript-codegen/issues"
     },
     "license": "MIT",
     "keywords": [
@@ -34,7 +34,7 @@
     "main": "dist/index.js",
     "types": "types/index.d.ts",
     "bin": {
-        "openapi": "bin/index.js"
+        "s2s-openapi": "bin/index.js"
     },
     "files": [
         "bin/index.js",
@@ -56,7 +56,7 @@
         "eslint": "eslint .",
         "eslint:fix": "eslint . --fix",
         "prepublishOnly": "npm run clean && npm run release",
-        "codecov": "codecov --token=66c30c23-8954-4892-bef9-fbaed0a2e42b"
+        "codecov": "echo \"No codecov\""
     },
     "dependencies": {
         "camelcase": "^6.3.0",

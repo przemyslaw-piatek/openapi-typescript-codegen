@@ -27,6 +27,6 @@ jobs:
 #      - run:
 #          name: Run e2e tests
 #          command: npm run test:e2e
-      - run:
-         name: Submit to Codecov
-         command: npm run codecov
+#      - run:
+#         name: Submit to Codecov
+#         command: npm run codecov

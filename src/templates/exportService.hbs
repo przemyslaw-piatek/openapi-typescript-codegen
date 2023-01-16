@@ -29,6 +29,7 @@ import type { BaseHttpRequest } from '../core/BaseHttpRequest';
 {{else}}
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
+import { ApiRequestOptions } from "../core/ApiRequestOptions";
 {{/if}}
 
 {{#equals @root.httpClient 'angular'}}
@@ -83,7 +84,7 @@ export class {{{name}}}{{{@root.postfix}}} {
 	public {{{name}}}({{>parameters}}): Observable<{{>result}}> {
 		return __request(OpenAPI, this.http, {
 	{{else}}
-	public static {{{name}}}({{>parameters}}): CancelablePromise<{{>result}}> {
+	public static {{{name}}}({{>parameters}}, options?: Pick<ApiRequestOptions, "headers" | "signal">): CancelablePromise<{{>result}}> {
 		return __request(OpenAPI, {
 	{{/equals}}
 	{{/if}}
@@ -99,13 +100,6 @@ export class {{{name}}}{{{@root.postfix}}} {
 			{{#if parametersCookie}}
 			cookies: {
 				{{#each parametersCookie}}
-				'{{{prop}}}': {{{name}}},
-				{{/each}}
-			},
-			{{/if}}
-			{{#if parametersHeader}}
-			headers: {
-				{{#each parametersHeader}}
 				'{{{prop}}}': {{{name}}},
 				{{/each}}
 			},
@@ -145,6 +139,16 @@ export class {{{name}}}{{{@root.postfix}}} {
 				{{/each}}
 			},
 			{{/if}}
+			{{#if parametersHeader}}
+				headers: {
+				{{#each parametersHeader}}
+					'{{{prop}}}': {{{name}}},
+				{{/each}}
+				},
+			{{else}}
+				...(options?.headers ? { headers: options.headers } : {}),
+			{{/if}}
+			...(options?.signal ? { signal: options.signal } : {}),
 		});
 	}
 

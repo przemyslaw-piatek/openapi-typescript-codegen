@@ -64,7 +64,7 @@ describe('bin', () => {
 
     it('it should display help', async () => {
         const result = crossSpawn.sync('node', ['./bin/index.js', '--help']);
-        expect(result.stdout.toString()).toContain(`Usage: openapi [options]`);
+        expect(result.stdout.toString()).toContain(`Usage: s2s-openapi [options]`);
         expect(result.stdout.toString()).toContain(`-i, --input <value>`);
         expect(result.stdout.toString()).toContain(`-o, --output <value>`);
         expect(result.stderr.toString()).toBe('');
