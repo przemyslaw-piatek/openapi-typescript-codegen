@@ -1,6 +1,6 @@
 {
     "name": "s2s-openapi-typescript-codegen",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Library that generates Typescript clients based on the OpenAPI specification.",
     "author": "Ferdi Koomen",
     "homepage": "https://github.com/przemyslaw-piatek/s2s-openapi-typescript-codegen",
@@ -59,11 +59,11 @@
         "codecov": "echo \"No codecov\""
     },
     "dependencies": {
-        "camelcase": "^6.3.0",
-        "commander": "^9.4.1",
-        "fs-extra": "^10.1.0",
-        "handlebars": "^4.7.7",
-        "json-schema-ref-parser": "^9.0.9"
+        "camelcase": "6.3.0",
+        "commander": "9.5.0",
+        "fs-extra": "10.1.0",
+        "handlebars": "4.7.7",
+        "json-schema-ref-parser": "9.1.0"
     },
     "devDependencies": {
         "@angular-devkit/build-angular": "14.2.7",
