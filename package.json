@@ -1,6 +1,6 @@
 {
     "name": "s2s-openapi-typescript-codegen",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "Library that generates Typescript clients based on the OpenAPI specification.",
     "author": "Ferdi Koomen",
     "homepage": "https://github.com/przemyslaw-piatek/s2s-openapi-typescript-codegen",
@@ -120,7 +120,8 @@
         "typescript": "4.8.4",
         "zone.js": "0.11.8"
     },
-    "overrides" : {
+    "overrides": {
         "rollup": "3.2.3"
-    }
+    },
+    "packageManager": "yarn@3.2.4"
 }
