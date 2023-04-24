@@ -1,16 +1,8 @@
 {
     "name": "s2s-openapi-typescript-codegen",
-    "version": "1.0.5",
+    "version": "1.1.0",
     "description": "Library that generates Typescript clients based on the OpenAPI specification.",
     "author": "Ferdi Koomen",
-    "homepage": "https://github.com/przemyslaw-piatek/s2s-openapi-typescript-codegen",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/przemyslaw-piatek/s2s-openapi-typescript-codegen.git"
-    },
-    "bugs": {
-        "url": "https://github.com/przemyslaw-piatek/s2s-openapi-typescript-codegen/issues"
-    },
     "license": "MIT",
     "keywords": [
         "openapi",
@@ -25,12 +17,6 @@
         "angular",
         "node"
     ],
-    "maintainers": [
-        {
-            "name": "Ferdi Koomen",
-            "email": "info@madebyferdi.com"
-        }
-    ],
     "main": "dist/index.js",
     "types": "types/index.d.ts",
     "bin": {
@@ -43,9 +29,9 @@
     ],
     "scripts": {
         "clean": "rimraf ./dist ./test/generated ./test/e2e/generated ./samples/generated ./coverage ./node_modules/.cache",
-        "build": "rollup --config --environment NODE_ENV:development",
-        "build:watch": "rollup --config --environment NODE_ENV:development --watch",
-        "release": "rollup --config --environment NODE_ENV:production",
+        "build": "rollup --config --environment NODE_ENV:production",
+        "build:dev": "rollup --config --environment NODE_ENV:development",
+        "build:dev:watch": "rollup --config --environment NODE_ENV:development --watch",
         "validate": "tsc --project tsconfig.json --noEmit",
         "run": "node ./test/index.js",
         "test": "jest --selectProjects UNIT",
@@ -55,8 +41,6 @@
         "test:e2e": "jest --selectProjects E2E --runInBand --verbose",
         "eslint": "eslint .",
         "eslint:fix": "eslint . --fix",
-        "prepublishOnly": "npm run clean && npm run release",
-        "codecov": "echo \"No codecov\"",
         "docker": "docker build -t s2s-openapi-typescript-codegen ."
     },
     "dependencies": {
@@ -121,7 +105,7 @@
         "typescript": "4.9.5",
         "zone.js": "0.13.0"
     },
-    "overrides" : {
+    "overrides": {
         "node-fetch": "2.6.9",
         "rollup": "3.20.2",
         "typescript": "4.9.5"
