@@ -9,7 +9,7 @@
 - Frontend ❤️ OpenAPI, but we do not want to use JAVA codegen in our builds
 - Quick, lightweight, robust and framework-agnostic 🚀
 - Supports generation of TypeScript clients
-- Supports generations of Fetch, [Node-Fetch](#node-fetch-support), [Axios](#axios-support), [Angular](#angular-support) and XHR http clients
+- Supports generations of Fetch, Node-Fetch, Axios, Angular and XHR http clients
 - Supports OpenAPI specification v2.0 and v3.0
 - Supports JSON and YAML files for input
 - Supports generation through CLI, Node.js and NPX
@@ -51,6 +51,21 @@ $ openapi --help
   Examples
     $ openapi --input ./spec.json --output ./generated
     $ openapi --input ./spec.json --output ./generated --client xhr
+```
+
+## Docker usage
+
+To build the Docker container, execute the following command:
+
+```
+docker build . --tag openapi-typescript-codegen
+```
+
+After this is done, you can execute the CLI commands:
+
+```
+docker run openapi-typescript-codegen --help
+docker run openapi-typescript-codegen --input sample.yaml --output client
 ```
 
 Documentation
